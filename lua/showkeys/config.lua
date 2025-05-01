@@ -1,11 +1,11 @@
-local M = {}
 local api = vim.api
 local buf, win
 local key_history = {}
 local timer = vim.loop.new_timer()
 local ns = api.nvim_create_namespace("key_logger")
-
 local enabled = false
+
+local M = {}
 
 local function map_special_key(key)
 	local key_map = {
@@ -38,9 +38,10 @@ local function update_key_display(key)
 	if #key_history > 20 then
 		table.remove(key_history, 1)
 	end
-	local key_str = table.concat(key_history, "")
 
+	local key_str = table.concat(key_history, "")
 	local win_width = math.min(#key_str, vim.o.columns - 10)
+
 	local opts = {
 		relative = "editor",
 		width = win_width,
