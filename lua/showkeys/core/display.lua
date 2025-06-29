@@ -25,7 +25,7 @@ function M.update(key_str)
 		relative = "editor",
 		width = win_width,
 		height = 1,
-		row = vim.o.lines - 3,
+		row = vim.o.lines - 2,
 		col = 5,
 		style = "minimal",
 		border = "none",
