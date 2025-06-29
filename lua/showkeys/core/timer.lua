@@ -5,7 +5,7 @@ local M = {}
 
 function M.restart()
 	state.timer:stop()
-	state.timer:start(2000, 0, vim.schedule_wrap(display.hide))
+	state.timer:start(1200, 0, vim.schedule_wrap(display.hide))
 end
 
 return M
